@@ -41,15 +41,35 @@
             <p>
                 The Keyhunter app is build with the <a href="http://ionicframework.com">Ionic Framework</a>. Ionic is an
                 open source,
-                front-end targeted framework that allowed us to build a hybrid iOS and Android app using <a
+                front-end targeted framework that allowed us to build a hybrid iOS and Android app using <a href="http://phonegap.com/">PhoneGap</a> togehter with <a
                     href="http://angularjs.org/">
                 AngularJS</a> and HTML5.
             </p>
 
             <p>
-
+                The communication with our <a href="http://estimote.com//">Estimote Beacons</a> is handled with very handy
+                <a href="https://github.com/kdzwinel/phonegap-estimotebeacons">PhoneGap plugin</a>. The plugin wraps the
+                functionallity for the Estimote iOS SDK. <br>Setting up the plugin is done by just adding the plugin files. Accessing any beacons
+                in range can be done with some native JavaScript:
             </p>
-
+            <pre><code>
+    // start looking for beacons
+    window.EstimoteBeacons.startRangingBeaconsInRegion(function () {
+        //every now and then get the list of beacons in range
+        setInterval(function () {
+            window.EstimoteBeacons.getBeacons(function (data) {
+                //do something cool with the list of beacons
+            });
+        }, 1000);
+    });
+            </code></pre>
+            <p>
+                For persistance a CouchDB fork hosted by <a href="http://www.iriscouch.com/">IrisCouch</a> is used. IrisCouch provides a hosted
+                SASS solution for CouchDB. <a href="http://couchdb.apache.org/">CouchDB</a> is an easy to use document database that simply can
+                store JSON objects. <br>
+                By using <a href="http://pouchdb.com/">pouchdb</a>, an open-source JavaScript database that can work offline and automatically
+                synch online with a CouchDB, the Keyhunter app does not require and server-side hosted backend.
+            </p>
             <h3>
                 <a name="support-or-contact" class="anchor" href="#support-or-contact"><span
                         class="octicon octicon-link"></span></a>Support or Contact</h3>
