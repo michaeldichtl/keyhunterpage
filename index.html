@@ -34,9 +34,8 @@
             <iframe src="//player.vimeo.com/video/99609344?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="690" height="388" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             <h3><a name="description" class="anchor" href="#description"><span class="octicon octicon-link"></span></a>Description</h3>
             <p>In Keyhunter each player starts with one unique key, and has to steal the keys from other players. Only if they collected all keys they can finally hack the central computer and win the game.</p>
-            <p>Players in range (~ 5 m) are visible to other players, and can be attacked/ robbed. If so, the attacker has to wait for the key download to be finished. As long as the download/ robbery takes, the victim will be informed and can run away and avoid losing a key.</p>
-             <p>After each attack, even if it failed, the attacker can't attack for ~15 s. This is the right time for revenge! The players also should be aware that other visible players in range may not have a) a single key b) the keys they need.</p>
-            <p>If a player stole every key, he still has to find the central computer,so he is not save from other attacks. Once the central computer has been hacked, the game is over.</p>
+            <p>Players in range (~ 5 m) are visible to other players, and can be attacked or robbed. If so, the attacker has to wait for the key download to be finished. As long as the download or robbery takes, the victim will be informed and can run away and avoid losing a key. After each attack, even if it failed, the attacker can't attack for ~15 seconds. This is the right time for revenge! The players also should be aware that other visible players in range may not have (a) a single key (b) the keys they need.</p>
+            <p>If a player stole every key, she or he still has to find the central computer, so she or he is not save from other attacks. Once the central computer has been hacked, the game is over.</p>
 
             <h3><a name="recommendation" class="anchor" href="#recommendation"><span class="octicon octicon-link"></span></a>Our recommendation</h3>
             <p>The game we implemented, only takes three players, but we think that the game will make  more fun with some more players. We would suggest 10 – 12 players, to make the game more dynamical.</p>
@@ -48,17 +47,15 @@
                 Setup</h3>
 
             <p>
-                The Keyhunter app is build with the <a href="http://ionicframework.com">Ionic Framework</a>. Ionic is an
-                open source,
-                front-end targeted framework that allowed us to build a hybrid iOS and Android app using <a href="http://phonegap.com/">PhoneGap</a> togehter with <a
+                The Keyhunter app is build with the <a href="http://ionicframework.com">Ionic Framework</a>. Ionic is an open source, front-end targeted framework that allowed us to build a hybrid iOS and Android app using <a href="http://phonegap.com/">PhoneGap</a> togehter with <a
                     href="http://angularjs.org/">
                 AngularJS</a> and HTML5.
             </p>
-
             <p>
-                The communication with our <a href="http://estimote.com//">Estimote Beacons</a> is handled with very handy
-                <a href="https://github.com/kdzwinel/phonegap-estimotebeacons">PhoneGap plugin</a>. The plugin wraps the
-                functionallity for the Estimote iOS SDK. <br>Setting up the plugin is done by just adding the plugin files. Accessing any beacons
+                The communication with our <a href="http://estimote.com//">Estimote Beacons</a> is handled with very handy <a href="https://github.com/kdzwinel/phonegap-estimotebeacons">PhoneGap plugin</a>. The plugin wraps the functionallity for the Estimote iOS SDK.
+            </p>
+            <p>
+                Setting up the plugin is done by just adding the plugin files. Accessing any beacons
                 in range can be done with some native JavaScript:
             </p>
             <pre><code>
@@ -72,20 +69,17 @@
         }, 1000);
     });
             </code></pre>
+            <p>Further, setting up the devide as beacon can be simply done by calling <code>window.EstimoteBeacons.startVirtualBeacon()</code>. While working with the Estimote beacons, we disovered some inaccuracies. However, if the devide is set up as a virtual beacon, the distance is accurate and in general very robust.</p>
             <p>
                 For persistance a CouchDB fork hosted by <a href="http://www.iriscouch.com/">IrisCouch</a> is used. IrisCouch provides a hosted
                 SASS solution for CouchDB. <a href="http://couchdb.apache.org/">CouchDB</a> is an easy to use document database that simply can
-                store JSON objects. <br>
+                store JSON objects.
+            </p>
+            <p>
                 By using <a href="http://pouchdb.com/">pouchdb</a>, an open-source JavaScript database that can work offline and automatically
                 synch online with a CouchDB, the Keyhunter app does not require and server-side hosted backend.
             </p>
-            <h3>
-                <a name="support-or-contact" class="anchor" href="#support-or-contact"><span
-                        class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-            <p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a>
-                or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it
-                out.</p>
+            <p>The source code is <a href="https://github.com/ulrichson/key-hunter-mobile">available on GitHub</a>.
         </section>
 
         <aside id="sidebar">
